@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import Feed from "./feedcomponent/Feed";
 import { Avatar } from "@mui/material";
+// import { db } from "./Base";
 import { db } from "./Base";
 import firebase from "firebase/compat/app";
 // import { firebase } from "firebase";
@@ -30,17 +31,21 @@ function MainSection() {
       photoUrl: "",
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
+
+    setInput("");
   };
 
   useEffect(() => {
-    db.collection("feeds").onSnapshot((onSnapshot) =>
-      setFeed(
-        onSnapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data,
-        }))
-      )
-    );
+    db.collection("feeds")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((onsnapshot) =>
+        setFeed(
+          onsnapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        )
+      );
   }, []);
 
   return (
@@ -88,13 +93,13 @@ function MainSection() {
           />
         </div>
       </div>
-      {feeds.map(({ id, data }) => (
+      {feeds.map(({ id, data: { name, message, description, photoUrl } }) => (
         <Feed
           key={id}
-          name={data.name}
-          description={data.description}
-          dmessage={data.message}
-          photoUrl={data.photoUrl}
+          name={name}
+          description={description}
+          message={message}
+          photoUrl={photoUrl}
         />
       ))}
     </div>
