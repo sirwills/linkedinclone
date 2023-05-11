@@ -1,0 +1,35 @@
+.feedWrapper
+{
+    border: 1px solid grey;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 6px; 
+    background-color: white;
+
+    .avatar-sec
+    {
+        .name
+        {
+            h4
+            {
+                font-size: 18px;
+                // line-height: 0;
+            }
+            p
+            {
+                font-size: 12px;
+                line-height: 0;
+            }
+        }
+
+        
+    }
+
+        input {
+            width: 100%;
+            border: none;
+            outline: none;
+        }
+
+        
+}

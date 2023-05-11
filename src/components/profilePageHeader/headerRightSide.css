@@ -1,0 +1,10 @@
+.wrapper {
+  color: gray;
+}
+.wrapper p {
+  font-size: 12px;
+}
+.wrapper:hover {
+  color: black;
+  cursor: pointer;
+}/*# sourceMappingURL=headerRightSide.css.map */

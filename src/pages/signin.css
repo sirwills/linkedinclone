@@ -1,0 +1,16 @@
+.image
+{
+    height: 15px;
+}
+
+.foot p
+{ 
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+.foot .link-text
+{
+    font-size: 13px;
+    font-weight: bold;
+}

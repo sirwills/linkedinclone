@@ -1,0 +1,37 @@
+.first img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.first
+{
+    display: flex;
+    background-color: white;
+    width: 260px;
+    
+    
+}
+
+.first .persal-details h4
+{
+    font-size: 12px;
+}
+
+.persal-details p
+{
+    gap: 0;
+    line-height: 0;
+  font-size: 13px;    
+}
+.first .persal-details .com-details
+{
+    font-size: 12px;
+
+}
+
+.persal-details button
+{
+    border: 1px solid gray;
+    padding: 5px 15px;
+}

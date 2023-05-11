@@ -1,0 +1,19 @@
+.feedWrapper {
+  border: 1px solid grey;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: white;
+}
+.feedWrapper .avatar-sec .name h4 {
+  font-size: 18px;
+}
+.feedWrapper .avatar-sec .name p {
+  font-size: 12px;
+  line-height: 0;
+}
+.feedWrapper input {
+  width: 100%;
+  border: none;
+  outline: none;
+}/*# sourceMappingURL=feed.css.map */

@@ -1,0 +1,13 @@
+.wrapper
+{
+    color: gray;
+    p 
+    {
+        font-size: 12px;
+    }
+
+    &:hover {
+        color: black;
+        cursor: pointer;
+    }
+}

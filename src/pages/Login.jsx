@@ -2,8 +2,19 @@ import React from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { FcGoogle } from "react-icons/fc";
+import { useState } from "react";
 
 const Login = () => {
+  const [showPass, setShowPass] = useState(true);
+  const [PassValue, setPassValue] = useState(true);
+  // const []
+
+  const passToggle = (e) => {
+    setShowPass((preState) => !preState);
+    setPassValue((prevState) => !prevState);
+    e.preventDefault();
+  };
+
   return (
     <>
       <Nav />
@@ -14,28 +25,38 @@ const Login = () => {
               <h1 className="my-5">Welcome to your professional community</h1>
               <form className="">
                 <div className="details d-flex flex-column w-75">
-                  <label htmlFor="Email or phone">Email or phone</label>
-                  <input
-                    className="py-3 rounded border"
-                    type="text"
-                    value=""
-                    required
-                  />
-                  <label className="mb-3" htmlFor="password" required>
-                    Password
-                  </label>
-                  <input className="py-3 rounded border" type="password" />
-                  <a className="my-3 nav-link" href="forgot-password">
-                    Forgot password
-                  </a>
-                  <input
-                    className="py-3 bg-primary rounded-pill border"
-                    type="button"
-                    value={"Sign in"}
-                  />
+                  <div className="d-flex flex-column w-100">
+                    <label htmlFor="Email or phone" className="m-2">
+                      Email or phone
+                    </label>
+                    <div className="w-100">
+                      <input
+                        className="py-3 rounded border w-100"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="d-flex flex-column w-100 mt-2 ">
+                    <label htmlFor="Email or phone" className="m-2">
+                      Password
+                    </label>
+                    <div className="w-100 d-flex align-items-center border py-3 rounded">
+                      <input
+                        className="py-2 rounded border w-100 mx-2 border-0"
+                        type={PassValue ? "Text" : "password"}
+                      />
+                      <button
+                        onClick={passToggle}
+                        className="border-0 bg-white"
+                      >
+                        {showPass ? "Hide" : "Show"}
+                      </button>
+                    </div>
+                  </div>
                   <div className="d-flex flex-column align-items-center">
                     <hr className="h-100 bg-dark" />
-                    <p className="p5">or</p>
+                    <p className="">or</p>
                   </div>
                   <button className="py-3  rounded-pill border">
                     <FcGoogle className="pe-2 fs-2" />

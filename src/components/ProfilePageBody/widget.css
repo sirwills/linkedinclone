@@ -1,0 +1,11 @@
+.wideright {
+  flex: 0.2;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 6px;
+}
+.wideright .top {
+  font-size: 14px;
+  height: -moz-fit-content;
+  height: fit-content;
+}/*# sourceMappingURL=widget.css.map */
