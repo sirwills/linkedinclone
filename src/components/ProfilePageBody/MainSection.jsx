@@ -24,9 +24,9 @@ function MainSection() {
     e.preventDefault();
 
     db.collection("feeds").add({
-      dname: "Wills Odali",
-      ddescription: "this is a test",
-      dmessage: input,
+      name: "Wills Odali",
+      description: "this is a test",
+      message: input,
       photoUrl: "",
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
@@ -88,13 +88,13 @@ function MainSection() {
           />
         </div>
       </div>
-      {feeds.map(({ id, data: { name, description, message, photoUrl } }) => (
+      {feeds.map(({ id, data }) => (
         <Feed
           key={id}
-          name={name}
-          description={description}
-          dmessage={message}
-          photoUrl={photoUrl}
+          name={data.name}
+          description={data.description}
+          dmessage={data.message}
+          photoUrl={data.photoUrl}
         />
       ))}
     </div>
